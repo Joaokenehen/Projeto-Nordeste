@@ -1,12 +1,27 @@
 import express from "express";
+import sequelize from "./config/database";
+import UserRoutes from "./routes/UserRoutes";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("Servidor está rodando");
+app.get("/test", (req, res) => {
+  res.send("Server is running!");
 });
 
+app.use(UserRoutes);
+
+// sync database
+/* sequelize
+  .sync({ alter: true })
+  .then(() => {
+    console.log("Database has been sincronized");
+  })
+  .catch((error) => {
+    console.log("Database sincronization has failed");
+  }); */
+// sync database
+
 app.listen(PORT, () => {
-  console.log("Servidor está rodando na porta", PORT);
+  console.log("Server is running on port", PORT);
 });
