@@ -9,6 +9,7 @@ app.get("/test", (req, res) => {
   res.send("Server is running!");
 });
 
+app.use(express.json());
 app.use(UserRoutes);
 
 // sync database
