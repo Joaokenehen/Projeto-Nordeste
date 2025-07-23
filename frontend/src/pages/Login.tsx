@@ -1,11 +1,36 @@
-import '../styles/Login.css'
+// src/Pages/Login.tsx
+import AuthLayout from '../components/AuthLayout';
+import { Link } from 'react-router-dom';
 
 function Login() {
-    return (
+  return (
+    <AuthLayout sideContent={
+      <div>
+        <h1>NorthWay</h1>
+        <img src="src/images/logo2.png" alt="Logo" />
+        <p>Sistema desenvolvido para:<br></br><strong>Expresso Nordeste Linhas Rodoviárias LTDA</strong><br></br>(44) 3518-4000</p>
+      </div>
+    }>
+      <h2>Entrar</h2>
+      <form>
         <div>
-            <h1>Tela de Login aqui!</h1>
+          <label>Email:</label><br />
+          <input type="email" placeholder="Digite seu email" />
         </div>
-    );
+        <div>
+          <label>Senha:</label><br />
+          <input type="password" placeholder="Digite sua senha" />
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+      <p>
+        Ainda não tem cadastro? 
+        <strong>
+          <Link  className="links" to="/cadastro"> Realize por aqui!</Link> 
+        </strong>
+      </p>
+    </AuthLayout>
+  );
 }
 
 export default Login;

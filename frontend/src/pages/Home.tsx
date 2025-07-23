@@ -22,6 +22,8 @@ function Home() {
           <div className="item">Pinpads</div>
           <div className="item">GPOS</div>
           <div className="item">Faturas</div>
+          <div className="item">Wi-Fi</div>
+          <div className="item">CPU'S</div>
         </div>
       </div>
     </div>
