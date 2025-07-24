@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import '../styles/Home.css';
+import logo from '../assets/logo2.png';
 
 function Home() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Home() {
       <div className="buttons-container">
         {/* Logo no canto superior esquerdo */}
         <div className="logo-container">
-          <img src="src/assets/logo2.png" alt="Logo NorthWay" className="logo" />
+          <img className="logo" src={logo} alt="Logo" />
         </div>
 
         {/* Botões no canto superior direito */}
