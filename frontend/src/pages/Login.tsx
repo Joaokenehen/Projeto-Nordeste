@@ -1,6 +1,7 @@
 // src/Pages/Login.tsx
 import AuthLayout from '../components/AuthLayout';
 import { Link } from 'react-router-dom';
+import '../styles/Login.css'
 
 function Login() {
   return (

@@ -1,0 +1,30 @@
+.dashboard {
+    display: flex;
+    height: 100vh;
+    background-image: url('../images/background3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    margin: 40px;
+}
+
+.welcome-container {
+    text-align: center;
+
+}
+
+.onibus-img {
+    width: 300px;
+    /* ou qualquer valor que quiser */
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}

@@ -24,6 +24,8 @@ function Home() {
           <div className="item">Faturas</div>
           <div className="item">Wi-Fi</div>
           <div className="item">CPU'S</div>
+          <div className="item">DVR'S e Câmeras</div>
+          <div className="item">Starlink's</div>
         </div>
       </div>
     </div>
