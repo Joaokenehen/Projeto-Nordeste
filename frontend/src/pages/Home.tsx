@@ -1,14 +1,32 @@
 import { useNavigate } from "react-router-dom";
-import '../styles/Home.css'
+import '../styles/Home.css';
 
 function Home() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-     return (
+  // Função para abrir o sistema de chamados
+  const openSupport = () => {
+    window.open('https://suporte.expnordeste.com.br', '_blank');
+  };
+
+  return (
     <div className="home-container">
       <div className="buttons-container">
-        <button onClick={() => navigate('/login')}>Entrar</button>
-        <button onClick={() => navigate('/cadastro')}>Cadastrar-se</button>
+        {/* Logo no canto superior esquerdo */}
+        <div className="logo-container">
+          <img src="src/assets/logo2.png" alt="Logo NorthWay" className="logo" />
+        </div>
+
+        {/* Botões no canto superior direito */}
+        <div className="buttons-right">
+          <button onClick={() => navigate('/login')}>Entrar</button>
+          <button onClick={() => navigate('/cadastro')}>Cadastrar-se</button>
+          <button 
+            onClick={openSupport} 
+            style={{ backgroundColor: 'yellow', color: 'black' }}>
+            Chamado T.I
+          </button>
+        </div>
       </div>
       <div className="mensagem-container">
         <h1>
@@ -16,7 +34,7 @@ function Home() {
         </h1>
         <p>Sistema para Controle de:</p>
         <div className="itens-container">
-           <div className="item">Estoque</div>
+          <div className="item">Estoque</div>
           <div className="item">Impressoras</div>
           <div className="item">Toners</div>
           <div className="item">Pinpads</div>
@@ -31,6 +49,5 @@ function Home() {
     </div>
   );
 }
-
 
 export default Home;

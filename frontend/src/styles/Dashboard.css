@@ -1,7 +1,13 @@
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 .dashboard {
+    min-height: 100vh;
     display: flex;
-    height: 100vh;
-    background-image: url('../images/background3.png');
+    background-image: url('../assets/background3.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,17 +19,18 @@
     padding: 40px;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 12px;
-    margin: 40px;
+    margin: auto;
+    /* centraliza */
+    max-width: 70%;
 }
 
 .welcome-container {
     text-align: center;
-
+    color: white;
 }
 
 .onibus-img {
     width: 300px;
-    /* ou qualquer valor que quiser */
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;

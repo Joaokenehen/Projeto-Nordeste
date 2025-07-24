@@ -1,13 +1,14 @@
 // src/Pages/Cadastro.tsx
 import AuthLayout from '../components/AuthLayout';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo2.png';
 
 function Cadastro() {
   return (
     <AuthLayout sideContent={
       <div>
         <h1>NorthWay</h1>
-        <img src="src/images/logo2.png" alt="Logo" />
+        <img src={logo} alt="Logo" />
         <p>Sistema desenvolvido para:<br></br><strong>Expresso Nordeste Linhas Rodoviárias LTDA</strong><br></br>(44) 3518-4000</p>
       </div>
     }>

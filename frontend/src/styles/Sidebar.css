@@ -1,24 +1,82 @@
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    /* Empilha os itens da sidebar */
     width: 250px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
     color: white;
     padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    /* Permite rolar quando o conteúdo exceder a altura */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar h2 {
+    font-size: 24px;
     margin-bottom: 30px;
+    color: #ffcc00;
+    /* amarelo da empresa */
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    /* Faz a lista crescer e ocupar o espaço disponível */
 }
 
 .sidebar li {
     padding: 10px;
     cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 4px;
 }
 
 .sidebar li:hover {
     background-color: #333355;
+}
+
+.submenu {
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-left: 2px solid #ffcc00;
+}
+
+.submenu li {
+    font-size: 14px;
+    padding: 8px;
+    background-color: transparent;
+}
+
+.submenu li:hover {
+    background-color: #444466;
+}
+
+/* Aplique as alterações no botão Sair */
+.sidebar li.logout-btn {
+    margin-top: auto;
+    /* Empurra o botão para o final da sidebar */
+    padding: 10px;
+    background-color: #ffcc00;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sidebar li.logout-btn:hover {
+    background-color: #ff9900;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
 }
