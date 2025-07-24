@@ -38,4 +38,6 @@ export const createUser = async (req: Request, res: Response) => {
   }
 };
 
+const createUser = async (req: Request, res: Response) => {};
+
 export default createUser;
