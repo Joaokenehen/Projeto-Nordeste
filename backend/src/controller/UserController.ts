@@ -19,7 +19,7 @@ export const createUser = async (req: Request, res: Response) => {
     const userData = {
       name: req.body.name,
       password: req.body.password,
-      cpf: req.body.password,
+      cpf: req.body.cpf,
       email: req.body.email,
       birth_date: req.body.birth_date,
     };
@@ -38,6 +38,6 @@ export const createUser = async (req: Request, res: Response) => {
   }
 };
 
-const createUser = async (req: Request, res: Response) => {};
+const updateUser = async (req: Request, res: Response) => {};
 
 export default createUser;
