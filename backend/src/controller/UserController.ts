@@ -30,14 +30,42 @@ export const createUser = async (req: Request, res: Response) => {
       });
     }
     const user = await UserModel.create(userData);
-    res.status(201).json(user);
-    message: "User createad";
+    res.status(201).json({ user, message: "User created successfully" });
   } catch (error: any) {
     console.error(error);
-    res.status(422).json({ error: error.message || "User creation failed" });
+    res.status(500).json("Server internal error" + error.message);
   }
 };
 
-const updateUser = async (req: Request, res: Response) => {};
+export const updateUser = async (
+  req: Request<{ id: number }>,
+  res: Response
+) => {
+  try {
+    const userData = {
+      name: req.body.name,
+      password: req.body.password,
+      cpf: req.body.cpf,
+      email: req.body.email,
+      birth_date: req.body.birth_date,
+    };
 
-export default createUser;
+    if (userData.name.length < 3) {
+      return res
+        .status(400)
+        .json({ error: "User need to have more than 3 characters" });
+    }
+
+    const user = await UserModel.findByPk(req.params.id);
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    user.name = userData.name;
+
+    await user.save();
+    res.status(201).json(user);
+  } catch (error: any) {
+    res.status(500).json("Server internal error" + error.message);
+  }
+};
